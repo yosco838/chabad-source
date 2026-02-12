@@ -9,9 +9,8 @@ export function Process() {
         <h2 className="mb-4 text-3xl font-bold text-primary-900 md:text-4xl">
           How It Works
         </h2>
-        <p className="mx-auto max-w-2xl text-neutral-700">
-          Getting started is simple. Here&apos;s our process from first call to
-          ongoing partnership.
+        <p className="mx-auto max-w-2xl text-neutral-600">
+          A clear, collaborative process from discovery to ongoing support.
         </p>
       </div>
 

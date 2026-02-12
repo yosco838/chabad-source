@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chabad Source | Non-Profit Services",
+  title: "Chabad Source – Design, CRM & Operations for Non-Profits",
   description:
-    "Design, CRM, and outreach services built for non-profit organizations that change the world.",
+    "You focus on your mission. We handle the systems, design, and operations. Professional services for non-profits, educational institutions, and mission-driven organizations.",
   openGraph: {
-    title: "Chabad Source | Non-Profit Services",
+    title: "Chabad Source – Design, CRM & Operations for Non-Profits",
     description:
-      "Design, CRM, and outreach services built for non-profit organizations that change the world.",
+      "You focus on your mission. We handle the systems, design, and operations. Professional services for non-profits, educational institutions, and mission-driven organizations.",
     type: "website",
   },
 };

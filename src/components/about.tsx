@@ -1,50 +1,58 @@
 import { SectionWrapper } from "./ui/section-wrapper";
 import { AnimateOnScroll } from "./ui/animate-on-scroll";
-import { aboutText } from "@/lib/site-data";
-import { Heart, Users, Zap } from "lucide-react";
+import { aboutText, values } from "@/lib/site-data";
+import { Eye, ShieldCheck, Leaf, Target } from "lucide-react";
+
+const valueIcons: Record<string, React.ReactNode> = {
+  Clarity: <Eye className="h-5 w-5 text-accent-500" />,
+  Reliability: <ShieldCheck className="h-5 w-5 text-accent-500" />,
+  Stewardship: <Leaf className="h-5 w-5 text-accent-500" />,
+  Impact: <Target className="h-5 w-5 text-accent-500" />,
+};
 
 export function About() {
   return (
     <SectionWrapper id="about">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-        <AnimateOnScroll>
-          <div>
-            <h2 className="mb-6 text-3xl font-bold text-primary-900 md:text-4xl">
-              {aboutText.heading}
-            </h2>
-            {aboutText.paragraphs.map((paragraph, i) => (
-              <p key={i} className="mb-4 leading-relaxed text-neutral-700 last:mb-0">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </AnimateOnScroll>
+      <AnimateOnScroll>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="mb-6 text-3xl font-bold text-primary-900 md:text-4xl">
+            {aboutText.heading}
+          </h2>
+          <p className="mb-8 text-lg leading-relaxed text-neutral-600">
+            {aboutText.intro}
+          </p>
+        </div>
+      </AnimateOnScroll>
 
-        <AnimateOnScroll delay={200}>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-1 lg:gap-8">
-            <div className="flex items-start gap-4 rounded-lg bg-primary-50 p-6">
-              <Heart className="h-6 w-6 shrink-0 text-accent-500" />
-              <div>
-                <p className="font-semibold text-primary-800">Mission-Driven</p>
-                <p className="text-sm text-neutral-600">We understand non-profit needs</p>
+      <AnimateOnScroll delay={100}>
+        <div className="mx-auto mb-12 max-w-3xl space-y-4">
+          {aboutText.background.map((paragraph, i) => (
+            <p key={i} className="leading-relaxed text-neutral-600">
+              {paragraph}
+            </p>
+          ))}
+          <p className="leading-relaxed text-neutral-600">
+            {aboutText.workingTogether}
+          </p>
+        </div>
+      </AnimateOnScroll>
+
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {values.map((value, i) => (
+          <AnimateOnScroll key={value.title} delay={i * 100}>
+            <div className="rounded-xl border border-neutral-200 bg-white p-6 text-center">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary-50">
+                {valueIcons[value.title]}
               </div>
+              <h3 className="mb-2 font-semibold text-primary-800">
+                {value.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                {value.description}
+              </p>
             </div>
-            <div className="flex items-start gap-4 rounded-lg bg-primary-50 p-6">
-              <Users className="h-6 w-6 shrink-0 text-accent-500" />
-              <div>
-                <p className="font-semibold text-primary-800">Dedicated Team</p>
-                <p className="text-sm text-neutral-600">Professionals who care</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 rounded-lg bg-primary-50 p-6">
-              <Zap className="h-6 w-6 shrink-0 text-accent-500" />
-              <div>
-                <p className="font-semibold text-primary-800">Fast Turnaround</p>
-                <p className="text-sm text-neutral-600">Results without the wait</p>
-              </div>
-            </div>
-          </div>
-        </AnimateOnScroll>
+          </AnimateOnScroll>
+        ))}
       </div>
     </SectionWrapper>
   );

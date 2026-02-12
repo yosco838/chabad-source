@@ -4,12 +4,12 @@ import { testimonials } from "@/lib/site-data";
 
 export function Testimonials() {
   return (
-    <SectionWrapper id="testimonials" className="bg-primary-50">
+    <SectionWrapper id="testimonials">
       <div className="mb-12 text-center">
         <h2 className="mb-4 text-3xl font-bold text-primary-900 md:text-4xl">
           What Our Clients Say
         </h2>
-        <p className="mx-auto max-w-2xl text-neutral-700">
+        <p className="mx-auto max-w-2xl text-neutral-600">
           Organizations we&apos;ve partnered with share their experience working
           with Chabad Source.
         </p>

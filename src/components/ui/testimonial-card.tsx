@@ -9,8 +9,8 @@ interface TestimonialCardProps extends Testimonial {
 export function TestimonialCard({ quote, name, organization, index }: TestimonialCardProps) {
   return (
     <AnimateOnScroll delay={index * 150}>
-      <div className="rounded-xl bg-white p-8 shadow-sm border border-neutral-300">
-        <Quote className="mb-4 h-6 w-6 text-accent-400" />
+      <div className="rounded-xl bg-white p-8 shadow-sm border border-neutral-200">
+        <Quote className="mb-4 h-6 w-6 text-primary-400" />
         <p className="mb-6 leading-relaxed text-neutral-700 italic">
           &ldquo;{quote}&rdquo;
         </p>

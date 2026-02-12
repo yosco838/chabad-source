@@ -55,7 +55,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -64,7 +64,7 @@ export function Navbar() {
                 "text-sm font-medium transition-colors duration-200",
                 activeSection === link.href.slice(1)
                   ? "text-accent-500"
-                  : "text-neutral-700 hover:text-primary-500"
+                  : "text-neutral-600 hover:text-primary-500"
               )}
             >
               {link.label}
@@ -72,25 +72,29 @@ export function Navbar() {
           ))}
           <a
             href="#contact"
-            className="rounded-lg bg-accent-500 px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-accent-600"
+            className="rounded-lg bg-primary-500 px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-primary-600"
           >
-            Get Started
+            Book a Consultation
           </a>
         </div>
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-neutral-700"
+          className="lg:hidden text-neutral-700"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="border-t border-neutral-300 bg-white px-4 py-4 md:hidden">
+        <div className="border-t border-neutral-200 bg-white px-4 py-4 lg:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -110,9 +114,9 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={handleLinkClick}
-              className="mt-2 rounded-lg bg-accent-500 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-600"
+              className="mt-2 rounded-lg bg-primary-500 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-primary-600"
             >
-              Get Started
+              Book a Consultation
             </a>
           </div>
         </div>

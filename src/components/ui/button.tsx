@@ -11,9 +11,9 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-primary-700 text-white hover:bg-primary-600 focus-visible:ring-primary-500",
+    "bg-primary-500 text-white hover:bg-primary-600 focus-visible:ring-primary-500",
   secondary:
-    "bg-white text-primary-700 border border-primary-300 hover:bg-primary-50 focus-visible:ring-primary-500",
+    "bg-white text-primary-500 border border-neutral-300 hover:bg-primary-50 focus-visible:ring-primary-500",
   accent:
     "bg-accent-500 text-white hover:bg-accent-600 focus-visible:ring-accent-500",
 };
